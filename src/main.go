@@ -1,8 +1,10 @@
-// PLEASE RUN CODE BY THE FOLLOWING COMMAND:
-// $ go run .
+// 		PLEASE RUN CODE BY THE FOLLOWING COMMAND:
+// 		$ go run .
+// 		OR:
+//		$ go run main.go
 //
-// To Build to an .exe:
-// $ go build -o exename.exe
+// 		To Build to the .exe:
+//		$ go build -o funcgo.exe
 
 package main
 
@@ -13,12 +15,12 @@ import (
 func main() {
 	var x int
 	var y int
-	sleepTime := 8        //! Change The Time of the sleep at the end.
 	var mode string
 
 	fmt.Print("1. Adding\n")
 	fmt.Print("2. Subtraction\n")
-	fmt.Print("3. Multiplying")
+	fmt.Print("3. Multiplying\n")
+	fmt.Print("0. Exit")
 	fmt.Print("\n> ")
 
 	fmt.Scanln(&mode)
@@ -78,9 +80,13 @@ func main() {
 		}
 
 		fmt.Print(x, " * ", y ," = ", x * y)
+	case "0":
+		fmt.Print("Exiting...")
 	default:
 		fmt.Print("An error has occured: unknown mode")
+		fmt.Print("\n")
 	}
-	fmt.Print("\n")
-	Wait(sleepTime)
+
+	fmt.Print("\nPress ENTER to exit...\n")
+	fmt.Scanln()
 }
